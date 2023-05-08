@@ -1,0 +1,24 @@
+# .gitignore example for C#. Just add the shit you need, that sums it up well.
+
+# Build Folders
+
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Nn]et[1234567890].[1234567890]/
+
+# Packages
+
+project.assets.json
+*.nuget.*
+*.g.*
+*.dgspec.*
+*.props
+*.targets
+
+# Stuff for VSCode
+
+.[Vv][Ss][Cc]ode/
+[Ll]aunch.json
+[Tt]asks.json
