@@ -9,28 +9,30 @@ namespace src
             public int X;
             public int Y;
             public int Z;
+            public float Magnitude;
 
             public Vector3(int X, int Y, int Z)
             {
                 this.X = X;
                 this.Y = Y;
                 this.Z = Z;
+                this.Magnitude = (float) Math.Sqrt(Math.Pow(this.X, 2) + Math.Pow(this.Y, 2) + Math.Pow(this.Z, 2));
             }
-        }
 
-        public static int Magnitude(Vector3 Vec1, Vector3 Vec2)
-        {
-            return (Vec2.X - Vec1.X)^2 + (Vec2.Y - Vec1.Y)^2 + (Vec2.Z - Vec1.Z)^2;
+            public float Distance(Vector3 Vector)
+            {
+                return (this.Magnitude - Vector.Magnitude);
+            }
         }
 
         static void Main()
         {
-            Vector3 V1 = new Vector3(8734, 1245, 9387);
-            Vector3 V2 = new Vector3(2347, 9772, 1247);
+            Vector3 V1 = new Vector3(5, 5, 5);
+            Vector3 V2 = new Vector3(15, 15, 15);
 
-            int Mag = Magnitude(V1, V2);
-
-            Console.WriteLine("Magnitude: " + Mag);
+            Console.WriteLine("V1 Magnitude: " + V1.Magnitude);
+            Console.WriteLine("V2 Magnitude: " + V2.Magnitude);
+            Console.WriteLine("Distance: " + V1.Distance(V2));
         }
     }
 }
